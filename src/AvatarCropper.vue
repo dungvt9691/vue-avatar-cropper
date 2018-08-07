@@ -127,6 +127,8 @@
           for (let key in data) {
             form.append(key, data[key])
           }
+          
+          xhr.withCredentials = true
 
           form.append(this.uploadFormName, blob, this.filename)
 
