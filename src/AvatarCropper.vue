@@ -127,14 +127,14 @@
           for (let key in data) {
             form.append(key, data[key])
           }
-          
-          xhr.withCredentials = true
 
           form.append(this.uploadFormName, blob, this.filename)
 
           this.$emit('uploading', form, xhr)
 
           xhr.open('POST', this.uploadUrl, true)
+          
+          xhr.withCredentials = true
 
           for (let header in this.uploadHeaders) {
             xhr.setRequestHeader(header, this.uploadHeaders[header])
